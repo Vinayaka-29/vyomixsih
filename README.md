@@ -1,8 +1,8 @@
 <div align="center">
-  <img src="public/logo.svg" alt="Earth Query Lens Logo" width="140" />
+  <img src="public/logo.svg" alt="VYOMIX Logo" width="140" />
 
-  # 🌍 Earth Query Lens
-  **Multimodal Geospatial AI & High-Resolution Bi-Temporal Satellite Intelligence**
+  # 🚀 VYOMIX
+  **Satellite Intelligence Platform for Multimodal Geospatial Analysis**
 
   [![React](https://img.shields.io/badge/React-19-blue.svg?style=flat&logo=react)](#)
   [![Vite](https://img.shields.io/badge/Vite-6-646CFF.svg?style=flat&logo=vite)](#)
@@ -23,7 +23,7 @@
 
 ## 🌟 Highlights
 
-**Earth Query Lens** is an advanced, client-side conversational AI and 3D geospatial platform for satellite imagery analysis. It bridges **CesiumJS 3D WebGL globes**, **Esri World Imagery Wayback archives (2014–2026)**, and **Multimodal Gemini Vision models** to deliver instant environmental insights and bi-temporal change detection directly in your browser.
+**VYOMIX** is a mission-ready satellite intelligence platform for geospatial analysis and explainable change detection. It brings together **CesiumJS 3D globe views**, **Esri World Imagery Wayback archives (2014–2026)**, and **multimodal AI reasoning** to deliver reliable environmental insights directly in the browser.
 
 > [!TIP]
 > **100% Free & Open — Zero Credit Card Required**: All satellite basemaps and historical archives stream directly from public-domain, zero-token open tile repositories (Esri World Imagery Wayback). No sign-up, no tokens, and no charges.
@@ -104,8 +104,8 @@ graph TD
 
 ### 1. Clone & Install
 ```bash
-git clone https://github.com/YOUR_USERNAME/earth-query-lens.git
-cd earth-query-lens
+git clone https://github.com/SmartKidzee/vyomixsih.git
+cd vyomixsih
 npm install
 ```
 

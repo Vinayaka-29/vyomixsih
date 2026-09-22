@@ -694,19 +694,17 @@ export function MapSelector({ onSelectBounds }: MapSelectorProps) {
       {/* CLEAN BI-TEMPORAL ERA SELECTOR BAR (No unnecessary slider, zero overflow) */}
       {/* ========================================================================= */}
       {isBitemporal && (
-        <div className="absolute top-3.5 left-1/2 -translate-x-1/2 z-30 w-auto max-w-[96%] bg-[#0c1428]/95 backdrop-blur-2xl border border-white/15 rounded-2xl p-2.5 px-4 shadow-[0_16px_40px_rgba(0,0,0,0.7)] flex items-center justify-center gap-3 text-white select-none animate-in fade-in zoom-in-95 duration-150">
-          
-          {/* Left View Selector */}
-          <div className="flex items-center gap-2 shrink-0">
+        <div className="absolute top-3.5 left-1/2 -translate-x-1/2 z-30 w-[min(96%,680px)] bg-[#0c1428]/95 backdrop-blur-2xl border border-white/15 rounded-2xl p-2.5 px-3 shadow-[0_16px_40px_rgba(0,0,0,0.7)] flex flex-col sm:flex-row items-stretch justify-center gap-2.5 text-white select-none animate-in fade-in zoom-in-95 duration-150">
+          <div className="flex items-center gap-2 w-full sm:w-auto">
             <span className="size-2.5 rounded-full bg-cyan-400 shadow-[0_0_10px_#38bdf8] animate-pulse" />
-            <div className="flex flex-col">
-              <span className="text-[10px] font-extrabold text-cyan-400 uppercase tracking-wider leading-none">
+            <div className="flex-1 min-w-0">
+              <span className="block text-[10px] font-extrabold text-cyan-400 uppercase tracking-wider leading-none">
                 Left View (T1)
               </span>
               <select
                 value={leftLayerId}
                 onChange={(e) => setLeftLayerId(e.target.value)}
-                className="mt-1 bg-black/70 border border-cyan-500/40 rounded-xl px-3 py-1.5 text-xs font-bold text-cyan-200 outline-none focus:border-cyan-400 cursor-pointer shadow-inner hover:border-cyan-400 transition-colors"
+                className="mt-1 w-full bg-black/70 border border-cyan-500/40 rounded-xl px-3 py-1.5 text-xs font-bold text-cyan-200 outline-none focus:border-cyan-400 cursor-pointer shadow-inner hover:border-cyan-400 transition-colors"
               >
                 {AVAILABLE_LAYERS.map(l => (
                   <option key={l.id} value={l.id} className="bg-[#0c1428] text-white">
@@ -717,28 +715,27 @@ export function MapSelector({ onSelectBounds }: MapSelectorProps) {
             </div>
           </div>
 
-          {/* Quick Swap Button */}
-          <div className="flex items-center px-1">
+          <div className="flex items-center justify-center px-0.5">
             <button
               type="button"
               onClick={handleSwapViews}
               className="p-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-cyan-500/20 hover:border-cyan-500/40 text-slate-300 hover:text-cyan-300 transition-all cursor-pointer hover:rotate-180 duration-300 shadow-sm active:scale-95"
               title="Swap Left and Right views"
+              aria-label="Swap left and right map views"
             >
               <ArrowLeftRight className="size-4" />
             </button>
           </div>
 
-          {/* Right View Selector */}
-          <div className="flex items-center gap-2 shrink-0">
-            <div className="flex flex-col items-end">
-              <span className="text-[10px] font-extrabold text-emerald-400 uppercase tracking-wider leading-none">
+          <div className="flex items-center gap-2 w-full sm:w-auto">
+            <div className="flex-1 min-w-0">
+              <span className="block text-[10px] font-extrabold text-emerald-400 uppercase tracking-wider leading-none text-right sm:text-left">
                 Right View (T2)
               </span>
               <select
                 value={rightLayerId}
                 onChange={(e) => setRightLayerId(e.target.value)}
-                className="mt-1 bg-black/70 border border-emerald-500/40 rounded-xl px-3 py-1.5 text-xs font-bold text-emerald-200 outline-none focus:border-emerald-400 cursor-pointer shadow-inner hover:border-emerald-400 transition-colors text-right"
+                className="mt-1 w-full bg-black/70 border border-emerald-500/40 rounded-xl px-3 py-1.5 text-xs font-bold text-emerald-200 outline-none focus:border-emerald-400 cursor-pointer shadow-inner hover:border-emerald-400 transition-colors text-right sm:text-left"
               >
                 {AVAILABLE_LAYERS.map(l => (
                   <option key={l.id} value={l.id} className="bg-[#0c1428] text-white">
@@ -835,12 +832,12 @@ export function MapSelector({ onSelectBounds }: MapSelectorProps) {
       {/* ========================================================================= */}
       {/* BOTTOM CONTROL BAR                                                        */}
       {/* ========================================================================= */}
-      <div className="p-3 bg-[#0c1428]/95 backdrop-blur-xl border-t border-white/10 flex items-center justify-between z-10 shrink-0 gap-3 flex-wrap">
-        <div>
+      <div className="p-3 bg-[#0c1428]/95 backdrop-blur-xl border-t border-white/10 flex items-center justify-between z-10 shrink-0 gap-3 flex-wrap md:flex-nowrap">
+        <div className="min-w-0 flex-1">
           <h3 className="text-sm font-bold text-white">
             {isBitemporal ? "Bi-Temporal Historical Comparison" : t("map.selectRegion")}
           </h3>
-          <p className="text-xs text-slate-400 mt-0.5">
+          <p className="text-xs text-slate-400 mt-0.5 leading-relaxed max-w-2xl">
             {isBitemporal
               ? "Select any era for Left and Right. Drag curtain to compare. Click 'Auto-Capture Both Views' to send both full-frame images to AI for change analysis."
               : (mode === "draw" ? t("map.drawInstruction") : t("map.panInstruction"))}
@@ -849,13 +846,13 @@ export function MapSelector({ onSelectBounds }: MapSelectorProps) {
             <p className="text-xs text-red-400 mt-1">{locationError}</p>
           )}
           {userCoords && !locationError && (
-            <p className="text-xs text-cyan-400/80 mt-1 font-mono">
+            <p className="text-xs text-cyan-400/80 mt-1 font-mono truncate">
               📍 GPS: {userCoords.lat.toFixed(5)}° N, {userCoords.lon.toFixed(5)}° E
             </p>
           )}
         </div>
 
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className="flex items-center gap-2 flex-wrap justify-end">
           {/* Bi-Temporal Mode Toggle Button */}
           <button
             type="button"

@@ -11,7 +11,7 @@ export const LANGUAGES: { code: Language; label: string; nativeLabel: string }[]
 // Translation keys
 const translations: Record<Language, Record<string, string>> = {
   en: {
-    "app.title": "Earth Query Lens",
+    "app.title": "VYOMIX",
     "app.subtitle": "Multimodal Geospatial AI",
     "nav.chat": "Chat",
     "nav.map": "Map",
@@ -81,7 +81,7 @@ const translations: Record<Language, Record<string, string>> = {
     "map.capturingBitemporal": "Capturing T1 & T2...",
   },
   hi: {
-    "app.title": "अर्थ क्वेरी लेंस",
+    "app.title": "VYOMIX",
     "app.subtitle": "मल्टीमॉडल भू-स्थानिक AI",
     "nav.chat": "चैट",
     "nav.map": "मानचित्र",
@@ -151,7 +151,7 @@ const translations: Record<Language, Record<string, string>> = {
     "map.capturingBitemporal": "T1 और T2 कैप्चर हो रहे हैं...",
   },
   kn: {
-    "app.title": "ಅರ್ತ್ ಕ್ವೆರಿ ಲೆನ್ಸ್",
+    "app.title": "VYOMIX",
     "app.subtitle": "ಮಲ್ಟಿಮೋಡಲ್ ಭೌಗೋಳಿಕ AI",
     "nav.chat": "ಚಾಟ್",
     "nav.map": "ನಕ್ಷೆ",

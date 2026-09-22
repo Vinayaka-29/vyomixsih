@@ -1216,7 +1216,7 @@ export default function Index() {
         <div className="p-4 flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <div className="flex size-8 shrink-0 items-center justify-center rounded-full overflow-hidden shadow-md shadow-cyan-500/15 border border-white/10 bg-[#080e1e] p-1">
-              <img src="/logo.svg" alt="Earth Query Lens" className="size-full object-contain" />
+              <img src="/logo.svg" alt="VYOMIX" className="size-full object-contain" />
             </div>
             <div>
               <h1 className="text-sm font-bold text-white font-serif tracking-tight">{t("app.title")}</h1>

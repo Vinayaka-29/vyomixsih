@@ -42,6 +42,7 @@ export function BackendSettings({ onChange }: { onChange?: (keys: any) => void }
     <div className="relative" ref={ref}>
       <button
         onClick={() => setOpen((o) => !o)}
+        aria-label="Open backend settings"
         className="flex size-9 items-center justify-center rounded-full border border-white/10 bg-white/5 shadow-sm transition-all hover:bg-white/10 backdrop-blur-sm cursor-pointer"
         title="Settings"
       >
